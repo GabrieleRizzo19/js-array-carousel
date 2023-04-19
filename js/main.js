@@ -22,12 +22,16 @@ let previous = document.getElementById("previous-arrow");
 let next = document.getElementById("next-arrow");
 
 let slideElements = document.getElementsByClassName("slide");
-console.log(slideElements);
+// console.log(slideElements);
 
 let currentSlide = 0;
 
+if(currentSlide == 0){
+    previous.style.display = "none";
+}
+
 previous.addEventListener("click", function(){
-    console.log("previous clicked");
+    // console.log("previous clicked");
 
     for(let i = (slideElements.length-1) ; i >= 0  ; i--){
         const slide = slideElements[i];
@@ -40,10 +44,22 @@ previous.addEventListener("click", function(){
     }
 
     currentSlide--;
+
+    if(currentSlide == 0){
+        previous.style.display = "none";
+    }else{
+        previous.style.display = "initial";
+    }
+    
+    if(currentSlide == slideElements.length-1){
+        next.style.display = "none";
+    }else{
+        next.style.display = "initial";
+    }
 })
 
 next.addEventListener("click", function(){
-    console.log("next clicked");
+    // console.log("next clicked");
 
     for(let i = 0 ; i < slideElements.length ; i++){
         const slide = slideElements[i];
@@ -56,4 +72,16 @@ next.addEventListener("click", function(){
     }
 
     currentSlide++;
+
+    if(currentSlide == 0){
+        previous.style.display = "none";
+    }else{
+        previous.style.display = "initial";
+    }
+
+    if(currentSlide == slideElements.length-1){
+        next.style.display = "none";
+    }else{
+        next.style.display = "initial";
+    }
 })

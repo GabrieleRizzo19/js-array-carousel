@@ -35,10 +35,10 @@ let previous = document.getElementById("previous-arrow");
 let next = document.getElementById("next-arrow");
 
 let slideElements = document.getElementsByClassName("slide");
-console.log(slideElements);
+// console.log(slideElements);
 
 let thumbnailsElements = document.getElementsByClassName("thumb");
-console.log(thumbnailsElements);
+// console.log(thumbnailsElements);
 
 let currentSlide = 0;
 

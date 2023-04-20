@@ -9,12 +9,12 @@ for( let i = 0 ; i < imgArray.length ; i++){
     
     if(i == 0){
         let newImg = document.createElement("img");
-        newImg.src = `../img/${currentArrayImg}`
+        newImg.src = `./img/${currentArrayImg}`
         newImg.className = "slide"
         big_img.append(newImg);
     }else{
         let newImg = document.createElement("img");
-        newImg.src = `../img/${currentArrayImg}`
+        newImg.src = `./img/${currentArrayImg}`
         newImg.className = "slide hidden"
         big_img.append(newImg);
     }
@@ -25,7 +25,7 @@ for( let i = 0 ; i < imgArray.length ; i++){
     let currentArrayImg = imgArray[i];
     
     let newImg = document.createElement("img");
-    newImg.src = `../img/${currentArrayImg}`
+    newImg.src = `./img/${currentArrayImg}`
     newImg.className = "thumb"
     newImg.addEventListener("click", function(){
         

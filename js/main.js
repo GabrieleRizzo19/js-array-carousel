@@ -6,12 +6,12 @@ for( let i = 0 ; i < imgArray.length ; i++){
     
     if(i == 0){
         let newImg = document.createElement("img");
-        newImg.src = `../img/${currentArrayImg}`
+        newImg.src = `./img/${currentArrayImg}`
         newImg.className = "slide"
         slider.append(newImg);
     }else{
         let newImg = document.createElement("img");
-        newImg.src = `../img/${currentArrayImg}`
+        newImg.src = `./img/${currentArrayImg}`
         newImg.className = "slide hidden"
         slider.append(newImg);
     }

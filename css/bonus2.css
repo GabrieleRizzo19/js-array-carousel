@@ -27,6 +27,7 @@
 .thumb{
     height: 20%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .green-border{

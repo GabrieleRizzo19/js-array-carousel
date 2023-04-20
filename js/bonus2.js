@@ -1,6 +1,7 @@
 let imgArray = ["01.webp", "02.webp", "03.webp", "04.webp", "05.webp", ];
 let big_img = document.getElementById("big-img");
 let thumbnails = document.getElementById("thumbnails");
+let currentSlide = 0;
 
 
 for( let i = 0 ; i < imgArray.length ; i++){
@@ -26,6 +27,24 @@ for( let i = 0 ; i < imgArray.length ; i++){
     let newImg = document.createElement("img");
     newImg.src = `../img/${currentArrayImg}`
     newImg.className = "thumb"
+    newImg.alt = `${i}`;
+    newImg.addEventListener("click", function(){
+        
+        slideElements[currentSlide].classList.add("hidden");
+        currentSlide = parseInt(newImg.alt);
+        slideElements[currentSlide].classList.remove("hidden");
+        for(let i = 0 ; i < thumbnailsElements.length ; i++){
+            let thumb = thumbnailsElements[i];
+            
+            if(i == currentSlide){
+                thumb.classList.add("green-border");
+                thumb.classList.remove("dark-img");        
+            }else{
+                thumb.classList.remove("green-border");
+                thumb.classList.add("dark-img");        
+            }
+        }
+    })
     thumbnails.append(newImg);
     
 }
@@ -40,7 +59,6 @@ let slideElements = document.getElementsByClassName("slide");
 let thumbnailsElements = document.getElementsByClassName("thumb");
 // console.log(thumbnailsElements);
 
-let currentSlide = 0;
 
 for(let i = 0 ; i < thumbnailsElements.length ; i++){
     let thumb = thumbnailsElements[i];
@@ -99,7 +117,6 @@ next.addEventListener("click", function(){
         for(let i = 0 ; i < slideElements.length ; i++){
             let slide = slideElements[i];
     
-            
             if(i == currentSlide+1){
                 slide.classList.remove("hidden");
             }else{

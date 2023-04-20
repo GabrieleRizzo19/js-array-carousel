@@ -27,16 +27,15 @@ for( let i = 0 ; i < imgArray.length ; i++){
     let newImg = document.createElement("img");
     newImg.src = `../img/${currentArrayImg}`
     newImg.className = "thumb"
-    newImg.alt = `${i}`;
     newImg.addEventListener("click", function(){
         
         slideElements[currentSlide].classList.add("hidden");
-        currentSlide = parseInt(newImg.alt);
+        currentSlide = i;
         slideElements[currentSlide].classList.remove("hidden");
-        for(let i = 0 ; i < thumbnailsElements.length ; i++){
-            let thumb = thumbnailsElements[i];
+        for(let c = 0 ; c < thumbnailsElements.length ; c++){
+            let thumb = thumbnailsElements[c];
             
-            if(i == currentSlide){
+            if(c == currentSlide){
                 thumb.classList.add("green-border");
                 thumb.classList.remove("dark-img");        
             }else{
